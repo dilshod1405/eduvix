@@ -1,0 +1,1 @@
+export { auth as middleware } from "@/app/authentication/authConfig/googleConfig";
