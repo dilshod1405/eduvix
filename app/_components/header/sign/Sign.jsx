@@ -1,11 +1,18 @@
 'use client'
 import Link from "next/link"
 import LoginIcon from '@mui/icons-material/Login';
+import { useEffect, useState } from "react";
 
 const Sign = () => {
-  const accessToken = localStorage.getItem('accessToken')
-  const is_staff = localStorage.getItem('is_staff')
-  const photo = localStorage.getItem('photo')
+  const [accessToken, setAccessToken] = useState(null);
+  const [is_staff, setIs_staff] = useState(null);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setAccessToken(localStorage.getItem("access"));
+      setIs_staff(localStorage.getItem("is_staff"));
+    }
+  }, []);
 
   return (
     <div className=''>

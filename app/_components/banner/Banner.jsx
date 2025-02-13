@@ -37,7 +37,7 @@ const Banner = () => {
   }, [currentIndex, fade, slides.length]);
 
   return (
-    <div className='md:pt-10 md:pl-20 md:pr-20 md:flex md:flex-row inline-block mx-5'>
+    <div className='md:pt-20 pt-10 md:pl-20 md:pr-20 md:flex md:flex-row inline-block mx-5'>
       <div className="basis-2/3"><Left title={slides[currentIndex].title} description={slides[currentIndex].description}/></div>
       <div className="basis-1/3"><Right photo={slides[currentIndex].photo}/></div>
     </div>
