@@ -15,7 +15,7 @@ const slides= [
     description: "Dasturlash sohasi bugungi kunda eng yuqori talab va maoshga ega sohalardan biri hisoblanadi. Nafaqat davlat tashkilotlari balki yangi tashkil qilinayotgan turli start up loyihalar ham bugungi kunda dasturchilarga talabi baland."
   },
   {
-    photo: "https://i.ibb.co/YBLYPvtd/605b2678c0e875d568b5e3476854b390.png",
+    photo: "https://github.com/dilshod1405/prohub.uz/blob/main/public/arch.png?raw=true",
     title: "Arxitektura va Qurilish",
     description: "Mamlakatimizda amalga oshirilayotgan ko'plab qurilishlarning amalga oshirilishi hamda Yangi Toshkent mavzesi kabi yirik loyihalar Arxitektura sohasiga qiziquvchilar sonini oshirmoqda."
   }
@@ -37,7 +37,7 @@ const Banner = () => {
   }, [currentIndex, fade, slides.length]);
 
   return (
-    <div className='md:pt-20 pt-10 md:pl-20 md:pr-20 md:flex md:flex-row inline-block mx-5'>
+    <div className='md:pt-10 pt-0 md:pl-20 md:pr-20 md:flex md:flex-row inline-block mx-5 h-50'>
       <div className="basis-2/3"><Left title={slides[currentIndex].title} description={slides[currentIndex].description}/></div>
       <div className="basis-1/3"><Right photo={slides[currentIndex].photo}/></div>
     </div>

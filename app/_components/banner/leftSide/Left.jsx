@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 const Left = (props) => {
   return (
-    <div className='w-full mt-20'>
+    <div className='w-full md:mt-20 md:mb-20 pt-5'>
       <div className='text-xl font-bold md:text-6xl'>{props.title}</div>
       <div className='text-lg pt-5 md:w-3/4'>{props.description}</div>
       <div className='pt-5'>
