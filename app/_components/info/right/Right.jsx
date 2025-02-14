@@ -60,6 +60,7 @@ const Right = () => {
                 >
                 {data.map((item, index) => (
                     <Step
+                    key={index}
                     completed
                     indicator={
                     <StepIndicator variant="solid" color="success">
