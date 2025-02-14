@@ -15,19 +15,19 @@ const data = [
         description: "Administratorlar tomonidan bepul va sifatli qo'llab quvvatlash imkoniyati"
     },
     {
-        title: "Real loyihalar",
-        description: "Real loyihalarda ishtirok etib tajriba orttirish imkoniyati"
-    },
-    {
         title: "Video uchrashuv",
         description: "Video uchrashuvlar orqali bilim almashish va savollarga javob topish imkoniyati"
     },
+    {
+        title: "Real loyihalar",
+        description: "Real loyihalarda ishtirok etib tajriba orttirish imkoniyati"
+    }
 ]
 const Right = () => {
   return (
-    <div className='md:float-right'>
-        <div className='md:text-3xl text-xl pt-7 font-bold'>Ta'limga tizimli yondashuv</div>
-        <div className='pt-10 w-1/2 md:w-full m-auto'>
+    <div className='md:float-right md:w-1/2'>
+        <div className='md:text-3xl text-xl pt-7 md:pt-0 font-bold'>Ta'limga tizimli yondashuv</div>
+        <div className='pt-10 w-1/2  m-auto'>
             <Stepper
                 orientation="vertical"
                 sx={(theme) => ({
