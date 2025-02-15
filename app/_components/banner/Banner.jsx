@@ -7,17 +7,17 @@ const slides= [
   {
     photo: "https://i.pinimg.com/736x/d1/2e/a0/d12ea01888146f29a27e70c777b70b8b.jpg",
     title: "Bilimga tikilgan sarmoya - kelajakka tikilgan sarmoya",
-    description: "Biz orqali zamonaviy raqamli kasblarni arzon, sifatli va istalgan muhitta o'rganing."
+    description: "Bizdagi bilim va tajriba orqali zamonaviy, raqamli kasblarni barchasini bir platformada arzon, sifatli va qulay muhitta o'rganing."
   },
   {
     photo: "https://i.pinimg.com/736x/90/af/07/90af07854766826d53280ba0da20be4c.jpg",
     title: "Dasturlash",
-    description: "Dasturlash sohasi bugungi kunda eng yuqori talab va maoshga ega sohalardan biri hisoblanadi. Nafaqat davlat tashkilotlari balki yangi tashkil qilinayotgan turli start up loyihalar ham bugungi kunda dasturchilarga talabi baland."
+    description: "Dasturlash sohasi bugungi kunda eng yuqori talab va maoshga ega sohalardan biri hisoblanadi."
   },
   {
     photo: "https://github.com/dilshod1405/prohub.uz/blob/main/public/arch.png?raw=true",
     title: "Arxitektura va Qurilish",
-    description: "Mamlakatimizda amalga oshirilayotgan ko'plab qurilishlarning amalga oshirilishi hamda Yangi Toshkent mavzesi kabi yirik loyihalar Arxitektura sohasiga qiziquvchilar sonini oshirmoqda."
+    description: "Mamlakatimizda ko'plab qurilishlarning amalga oshirilishi hamda Yangi Toshkent mavzesi kabi yirik loyihalar Arxitektura sohasida yangi ish o'rinlarini tashkil qilishga zamin yaratmoqda."
   }
 ]
 const Banner = () => {

@@ -4,6 +4,7 @@ import Banner from '../_components/banner/Banner'
 import Info from '../_components/info/Info'
 import Teachers from '../_components/teachers/Teachers'
 import Statistics from '../_components/statistics/Statistics'
+import Certificate from '../_components/certificate/Certificate'
 
 const Main = () => {
   return (
@@ -13,6 +14,7 @@ const Main = () => {
       <Info />
       <Teachers />
       <Statistics />
+      <Certificate />
     </div>
   )
 }
