@@ -5,6 +5,8 @@ import Info from '../_components/info/Info'
 import Teachers from '../_components/teachers/Teachers'
 import Statistics from '../_components/statistics/Statistics'
 import Certificate from '../_components/certificate/Certificate'
+import Programs from '../_components/programs/Programs'
+import Specialities from '../_components/specialities/Specialities'
 
 const Main = () => {
   return (
@@ -14,7 +16,9 @@ const Main = () => {
       <Info />
       <Teachers />
       <Statistics />
+      <Specialities />
       <Certificate />
+      <Programs />
     </div>
   )
 }

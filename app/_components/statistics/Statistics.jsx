@@ -29,7 +29,7 @@ const data = [
   },
   {
     title: "Mentorlar soni",
-    number: 50
+    number: 10
   }
 ]
 
