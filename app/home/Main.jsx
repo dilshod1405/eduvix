@@ -12,7 +12,7 @@ import Explanation from '../_components/explanation/Explanation'
 
 const Main = () => {
   return (
-    <div className='snap-y snap-proximity h-screen overflow-y-scroll'>
+    <div className='snap-y snap-proximity h-screen overflow-y-scroll scroll-smooth md:scroll-auto'>
       <Header />
       <Banner />
       <Info />

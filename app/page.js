@@ -1,7 +1,11 @@
+'use client'
 import Main from "./home/Main";
 
 
-export default function Home() {
+
+export default function App() {
+
+
   return (
     <div className="">
       <Main />

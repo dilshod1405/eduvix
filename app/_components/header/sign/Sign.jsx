@@ -26,7 +26,7 @@ const Sign = () => {
         </div>
       ) : (
         <div>
-          <Link href='/authentication/login' className='link p-2 bg-indigo-500 text-white rounded-md md:text-lg'><LoginIcon/> Kirish</Link>
+          <Link href='/authentication/login' className='font-semibold text-white rounded-md md:text-lg'><LoginIcon/> Kirish</Link>
         </div>
       )}
     </div>
