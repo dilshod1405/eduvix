@@ -61,9 +61,6 @@ const Teachers = () => {
                     disableOnInteraction: false, // Keeps autoplay running after user interaction
                 }}
                 pagination={{ clickable: true }}
-                onSwiper={(swiper) => console.log(swiper)}
-                onSlideChange={() => console.log("slide change")}
-                onAnimationEnd={() => console.log("animation end")}
                 >
                 {teachers.map((teacher, index) => (
                     <SwiperSlide key={index} className='md:pb-10 pb-5'>
