@@ -18,7 +18,7 @@ export default function FilterComponent() {
       .catch((err) => console.error("Error fetching categories:", err));
 
     // Fetch all specialities
-    axios.get(`${process.env.NEXT_PUBLIC_API_URL_EDU}/edu/modules/`)
+    axios.get(`${process.env.NEXT_PUBLIC_API_URL_EDU}/edu/specialities/`)
       .then((res) => {
         setSpecialities(res.data);
         setFilteredSpecialities(res.data);
@@ -52,8 +52,8 @@ export default function FilterComponent() {
   };
 
   return (
-    <div className="md:flex md:flex-row min-h-screen">
-        <div className="p-5 md:p-10 bg-indigo-50 rounded-md md:w-1/4 w-3/4 md:mt-10 mt-5 m-auto md:sticky md:top-20">
+    <div className="md:flex md:flex-row min-h-screen m-auto">
+        <div className="p-5 md:p-10 bg-indigo-50 rounded-md md:w-1/5 w-3/4 md:mt-10 mt-5 m-auto md:sticky md:top-20">
             <h2 className="md:text-xl text-lg font-bold mb-2 md:mb-4 text-indigo-500 text-center">Kategoriya bo'yicha qidirish</h2>
             <div className="mb-4 md:mb-6">
                 {categories.map(category => (
@@ -67,7 +67,7 @@ export default function FilterComponent() {
             </div>
         </div>
         
-        <div className="md:w-3/4 md:mx-auto pt-5 md:pl-10 md:pr-10 block m-auto md:mt-10 mt-5">
+        <div className="md:w-4/5 pt-5 md:pl-5 md:pr-5 md:mt-10 mt-5">
             <h2 className="md:text-4xl text-xl md:pt-0 font-bold text-center text-indigo-500">Hozirda mavjud o'quv kurslar</h2>
             <Card filteredSpecialities={filteredSpecialities} loading={loading}/>
         </div>

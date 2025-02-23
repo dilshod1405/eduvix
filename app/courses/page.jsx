@@ -12,7 +12,7 @@ const page = () => {
   return (
     <div className=''>
       <Header />
-      <div className='md:w-3/4 md:mx-auto pt-5 block m-auto'>
+      <div className='md:mx-auto pt-5 block m-auto'>
         <Filter />
       </div>
       <Footer />
