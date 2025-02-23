@@ -18,10 +18,12 @@ export default function FilterComponent() {
       .catch((err) => console.error("Error fetching categories:", err));
 
     // Fetch all specialities
-    axios.get(`${process.env.NEXT_PUBLIC_API_URL_EDU}/edu/specialities/`)
+    axios.get(`${process.env.NEXT_PUBLIC_API_URL_EDU}/edu/modules/`)
       .then((res) => {
         setSpecialities(res.data);
         setFilteredSpecialities(res.data);
+        console.log(res.data);
+        
         setLoading(false);
       })
       .catch((err) => console.error("Error fetching specialities:", err));
@@ -50,7 +52,7 @@ export default function FilterComponent() {
   };
 
   return (
-    <div className="md:flex md:flex-row">
+    <div className="md:flex md:flex-row min-h-screen">
         <div className="p-5 md:p-10 bg-indigo-50 rounded-md md:w-1/4 w-3/4 md:mt-10 mt-5 m-auto md:sticky md:top-20">
             <h2 className="md:text-xl text-lg font-bold mb-2 md:mb-4 text-indigo-500 text-center">Kategoriya bo'yicha qidirish</h2>
             <div className="mb-4 md:mb-6">

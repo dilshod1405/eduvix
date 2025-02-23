@@ -11,7 +11,7 @@ const Specialities = () => {
   useEffect(() => {
     const fetchSpecialities = async () => {
       try {
-        const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL_EDU}/edu/specialities/`);
+        const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL_EDU}/edu/modules/`);
         setSpecialities(response.data);
       } catch (err) {
         setError("Failed to fetch specialities");
@@ -42,10 +42,10 @@ const Specialities = () => {
             <div className='grid grid-cols-1 md:grid-cols-2 gap-5 pt-10 text-center w-2/9 m-auto md:pt-10'>
               {specialities.map((item, index) => (
                 <div className="pl-2 pr-2 w-3/4 m-auto shadow-lg rounded-2xl border-t-4 hover:shadow-xl md:h-44 h-40 transition duration-300 border-indigo-500 " key={index}>
-                  <div className="md:text-xl text-sm font-semibold pt-5">{item.name}</div>
-                  <div className="md:text-sm text-xs pt-5">Mentor: <span className="text-indigo-500 font-semibold">{item.teacher.user.first_name} {item.teacher.user.last_name}</span></div>
+                  <div className="md:text-xl text-sm font-semibold pt-5">{item.speciality.name}</div>
+                  <div className="md:text-sm text-xs pt-5">Mentor: <span className="text-indigo-500 font-semibold">{item.speciality.teacher.user.first_name} {item.speciality.teacher.user.last_name}</span></div>
                   <div className='pt-5'>
-                    <Link href={`/speciality/${item.id}`} className='p-2 bg-indigo-500 text-white font-semibold transition duration-300 rounded-md text-xs md:text-sm hover:shadow-lg'>Kursni ko'rish</Link>
+                    <Link href={`/course/${item.id}`} className='p-2 bg-indigo-500 text-white font-semibold transition duration-300 rounded-md text-xs md:text-sm hover:shadow-lg'>Kursni ko'rish</Link>
                   </div>
                 </div>
               ))}
