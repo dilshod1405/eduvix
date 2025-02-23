@@ -7,7 +7,7 @@ export default function App() {
 
 
   return (
-    <div className="">
+    <div className='min-h-screen'>
       <Main />
     </div>  
     );
