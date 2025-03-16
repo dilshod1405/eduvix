@@ -9,52 +9,56 @@ import CourseDisplay from "../CourseDetail";
 async function getCourse(id) {
   try {
     const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL_EDU}/edu/specialities/${id}/`, {
-      headers: {
-        "Cache-Control": "no-store", // Prevent caching issues
-      },
+      headers: { "Cache-Control": "no-store" },
     });
-
-    return response.data; // Return the course data
+    return response.data;
   } catch (error) {
     console.error("Error fetching course:", error.response?.status, error.message);
-    return null; // Return null if not found or request fails
+    return null;
   }
 }
 
-async function getModules(id) {
+// ✅ Fetch modules data
+async function getModules() {
   try {
-    const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL_EDU}/edu/modules/${id}/`, {
-      headers: {
-        "Cache-Control": "no-store", // Prevent caching issues
-      },
+    const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL_EDU}/edu/modules/`, {
+      headers: { "Cache-Control": "no-store" },
     });
-
-    return response.data; // Return the course data
+    return response.data; // Ensure this is an array
   } catch (error) {
-    console.error("Error fetching course:", error.response?.status, error.message);
-    return null; // Return null if not found or request fails
+    console.error("Error fetching modules:", error.response?.status, error.message);
+    return null;
   }
 }
 
-// ✅ Ensure `params` is handled correctly
 export default async function CourseDetail({ params }) {
-    const { id } = await params;
-  if (!id || !id) {
-    return notFound(); // Ensure `id` exists before using it
+  const { id } = params;
+  if (!id) {
+    return notFound();
   }
 
-   // Handle special characters in `id`
-  const course = await getCourse(id); // Fetch course data
-  const module = await getModules(id);
+  // Fetch data
+  const course = await getCourse(id);
+  const modules = await getModules(id);
+
+  console.log("Modules API Response:", modules);
 
   if (!course) {
-    return notFound(); // Show 404 if course doesn't exist
+    return notFound();
   }
+
+  // ✅ Wrap single object in an array
+  const moduleArray = Array.isArray(modules) ? modules : [modules];
+
+  // ✅ Now filter correctly
+  const filteredModules = moduleArray.filter(
+    (module) => module.speciality.name === course.name
+  );
 
   return (
     <div className="h-screen">
       <Header />
-      <CourseDisplay course={course} />
+      <CourseDisplay course={course} filteredModules={filteredModules} />
       <Footer />
     </div>
   );
