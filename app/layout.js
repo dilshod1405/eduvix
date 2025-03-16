@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: 'ProHub.uz',
+  title: 'EduVix',
 }
 
 export default function RootLayout({ children }) {

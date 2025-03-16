@@ -31,6 +31,18 @@ async function getModules() {
   }
 }
 
+async function getLessons() {
+  try {
+    const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL_EDU}/edu/lessons/`, {
+      headers: { "Cache-Control": "no-store" },
+    });
+    return response.data; // Ensure this is an array
+  } catch (error) {
+    console.error("Error fetching modules:", error.response?.status, error.message);
+    return null;
+  }
+}
+
 export default async function CourseDetail({ params }) {
   const { id } = params;
   if (!id) {
@@ -40,8 +52,9 @@ export default async function CourseDetail({ params }) {
   // Fetch data
   const course = await getCourse(id);
   const modules = await getModules(id);
+  const lessons = await getLessons(id);
 
-  console.log("Modules API Response:", modules);
+  console.log(lessons);
 
   if (!course) {
     return notFound();
@@ -55,10 +68,14 @@ export default async function CourseDetail({ params }) {
     (module) => module.speciality.name === course.name
   );
 
+  const filteredLessons = lessons.filter(
+    (lesson) => lesson.module.speciality.name === course.name
+  );
+
   return (
     <div className="h-screen">
       <Header />
-      <CourseDisplay course={course} filteredModules={filteredModules} />
+      <CourseDisplay course={course} filteredModules={filteredModules} filteredLessons={filteredLessons}/>
       <Footer />
     </div>
   );
