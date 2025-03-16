@@ -37,9 +37,9 @@ const Right = () => {
                     '--Step-connectorInset': '0.5rem',
                     '--Step-connectorRadius': '1rem',
                     '--Step-connectorThickness': '4px',
-                    '--joy-palette-success-solidBg': '#3F51B5',
+                    '--joy-palette-success-solidBg': '#1e293b',
                     [`& .${stepClasses.completed}`]: {
-                    '&::after': { bgcolor: '#3F51B5' },
+                    '&::after': { bgcolor: '#1e293b' },
                     },
                     [`& .${stepClasses.active}`]: {
                     [`& .${stepIndicatorClasses.root}`]: {

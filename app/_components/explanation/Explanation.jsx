@@ -34,12 +34,12 @@ const data = [
 const Explanation = () => {
   return (
     <div className='md:pt-20 md:w-4/5 md:mx-auto pt-10 block m-auto h-50 pb-10'>
-        <div className='md:text-4xl text-xl md:pt-7 font-bold text-center text-indigo-500'>Savollarga javoblar</div>
+        <div className='md:text-4xl text-xl md:pt-7 font-bold text-center text-slate-500'>Savollarga javoblar</div>
         <div className='md:pt-10 pt-5 h-50 w-3/4 m-auto md:w-1/2'>
             <AccordionGroup sx={{ maxWidth: 1000 }}>
                 {data.map((item, index) => (
                     <Accordion key={index}>
-                        <AccordionSummary className='md:text-lg text-sm font-semibold bg-indigo-100'>{item.question}</AccordionSummary>
+                        <AccordionSummary className='md:text-lg text-sm font-semibold bg-slate-100'>{item.question}</AccordionSummary>
                         <AccordionDetails className='md:text-lg text-sm font-semibold text-justify'>{item.answer}</AccordionDetails>
                     </Accordion>
                 ))}

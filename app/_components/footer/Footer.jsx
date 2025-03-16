@@ -57,7 +57,7 @@ const data_2 = [
 
 const Footer = () => {
   return (
-    <div className='bg-indigo-500 text-white md:rounded-t-full md:pt-5 pt-5 md:pb-5 md:mt-10 mt-5 bottom-0'>
+    <div className='bg-slate-800 text-white md:rounded-t-full md:pt-5 pt-5 md:pb-5 md:mt-10 mt-5 bottom-0'>
       <div className='md:flex md:flex-row md:w-3/4 mx-auto block m-auto w-3/4'>
         <ul className='block md:w-1/7 m-auto'>
           {data_1.map((item, index) => (

@@ -22,7 +22,7 @@ const data = [
 const Programs = () => {
   return (
     <div className='md:pt-20 md:w-3/4 md:mx-auto pt-5 md:pl-20 md:pr-20 block m-auto h-50'>
-        <div className='md:text-4xl text-xl md:pt-7 font-bold text-center text-indigo-500'>Kerakli dasturlarni yuklash</div>
+        <div className='md:text-4xl text-xl md:pt-7 font-bold text-center text-slate-500'>Kerakli dasturlarni yuklash</div>
         <div className='grid grid-cols-2 md:grid-cols-3 gap-5 pt-10 text-center w-3/4 m-auto md:pt-20'>
             {data.map((item, index) => (
                 <Link href={item.url} key={index} className='md:text-xl text-sm font-semibold block w-1/2 m-auto'>
@@ -31,7 +31,7 @@ const Programs = () => {
                 </Link>
             ))}
         </div>
-        <Link href='/authentication/login' className='p-2 bg-indigo-500 text-white rounded-md md:text-lg hover:shadow-lg md:mt-10 mt-5 block m-auto text-center md:w-1/5 w-3/4'>Barchasini ko'rish</Link>
+        <Link href='/authentication/login' className='p-2 bg-slate-800 text-white rounded-md md:text-lg hover:shadow-lg md:mt-10 mt-5 block m-auto text-center md:w-1/5 w-3/4'>Barchasini ko'rish</Link>
     </div>
   )
 }

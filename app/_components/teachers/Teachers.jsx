@@ -48,7 +48,7 @@ const teachers = [
 const Teachers = () => {
   return (
     <div className='md:pt-20 md:w-3/4 md:mx-auto pt-5 md:block block m-auto h-50'>
-        <div className='md:text-4xl text-xl pt-7 md:pt-0 font-bold text-center text-indigo-500'>Tajribali ustozlar jamoasi</div>
+        <div className='md:text-4xl text-xl pt-7 md:pt-0 font-bold text-center text-slate-500'>Tajribali ustozlar jamoasi</div>
         <div className='pt-10 h-50'>
             <Swiper
                 modules={[EffectCreative, EffectFade, Autoplay]}
@@ -66,10 +66,10 @@ const Teachers = () => {
                     <SwiperSlide key={index} className='md:pb-10 pb-5'>
                         <div className='md:w-64 m-auto shadow-md text-center md:rounded-2xl md:text-left pb-3'>
                             <img src={teacher.photo} alt="photo" className='w-full md:rounded-t-xl'/>
-                            <div className='md:text-xl text-xs font-semibold md:pl-4 text-indigo-500 pt-2'>{teacher.name}</div>
-                            <div className='md:text-sm text-xs font-semibold md:pl-4'>{teacher.position}</div>
+                            <div className='md:text-xl text-xs font-semibold md:pl-4 text-slate-500 pt-2 text-center'>{teacher.name}</div>
+                            <div className='md:text-sm text-xs font-semibold md:pl-4 text-center'>{teacher.position}</div>
                             <div className='pr-4 pt-2'>
-                                <div className='text-sm font-extralight pl-4'>Tajriba: &#160;&#160;&#160;+{teacher.experience} yil</div>
+                                <div className='text-sm font-extralight pl-4 text-center'>Tajriba: &#160;&#160;&#160;+{teacher.experience} yil</div>
                             </div>
                         </div>
                     </SwiperSlide>

@@ -10,9 +10,9 @@ const Certificate = () => {
             <img src="https://i.ibb.co/C3FWjC4k/d.png" alt="photo" className='w-full md:rounded-2xl '/>
         </div>
         <div className='md:w-1/2 w-6/7 m-auto p-5 h-50'>
-            <div className='md:text-4xl text-xl md:pt-7 font-bold text-center text-indigo-500'>Sertifikat</div>
+            <div className='md:text-4xl text-xl md:pt-7 font-bold text-center text-slate-500'>Sertifikat</div>
             <div className='md:pt-10 md:text-lg text-sm text-justify'>Har bir mutaxassislik kursida kursni to'liq yakunlagan talabalarga sertifikat beriladi. Faqat ayrim mutaxassisliklarda sertifikat olish uchun alohida <Link href='/exams' className=' text-indigo-500 md:text-lg font-semibold'>imtihon</Link> topshiriladi.</div>
-            <Link href='/certificates' className='p-2 bg-indigo-500 text-white rounded-md md:text-lg hover:shadow-lg md:mt-10 mt-5 block m-auto text-center md:w-1/2 w-3/4'><FactCheckIcon /> Sertifikatni tekshirish</Link>
+            <Link href='/certificates' className='p-2 bg-slate-800 text-white rounded-md md:text-lg hover:shadow-lg md:mt-10 mt-5 block m-auto text-center md:w-1/2 w-3/4'><FactCheckIcon /> Sertifikatni tekshirish</Link>
         </div>
     </div>
   )

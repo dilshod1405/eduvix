@@ -3,18 +3,17 @@ import React from 'react'
 import Skeleton from '@mui/material/Skeleton';
 import Grid from '@mui/material/Grid2';
 import Link from 'next/link';
-import { Box } from '@mui/material';
 
 function SkeletonCard() {
     return (
-        <Grid size={6}  className='mt-5 flex flex-col shadow-md'>
+        <Grid size={4}  className='mt-5 flex flex-col shadow-md '>
             <Skeleton animation="wave" variant="rectangular" width="100%" height={200}
                       className='m-auto'/>
-            <Skeleton animation={false} width="70%" variant="text"
+            <Skeleton animation={false} width="60%" variant="text"
                       sx={{fontSize: '1.2rem', alignSelf: 'center'}}/>
-            <Skeleton animation={false} width="70%" variant="text"
+            <Skeleton animation={false} width="60%" variant="text"
                       sx={{fontSize: '1.2rem', alignSelf: 'center', lineHeight: '0.8'}}/>
-            <Skeleton animation={false} width="50%" variant="text"
+            <Skeleton animation={false} width="40%" variant="text"
                       sx={{fontSize: '3rem', alignSelf: 'center',}}/>
         </Grid>
     )
@@ -46,9 +45,9 @@ const Card = (props) => {
                                 <div className=''>
                                     <img src={item.picture} alt=""
                                          className='block m-auto rounded-t-md md:h-80 w-full size-cover'/>
-                                    <div className='md:text-lg text-sm font-semibold text-center text-indigo-500 pt-2 md:pt-5 p-2'>{item.name}</div>
-                                    <div className='md:text-sm text-xs text-center pt-2 md:pt-3'>Mentor: <span className='font-semibold text-indigo-500'>{item.teacher.user.first_name} {item.teacher.user.last_name}</span></div>
-                                    <Link href={`/course/${item.id}`} className='p-2 bg-indigo-500 text-white rounded-md hover:shadow-lg mt-2 block m-auto text-center md:w-1/2 w-3/4'>Kursni ko'rish</Link>
+                                    <div className='md:text-lg text-sm font-semibold text-center text-slate-500 pt-2 md:pt-5 p-2'>{item.name}</div>
+                                    <div className='md:text-sm text-xs text-center pt-2 md:pt-3'>Mentor: <span className='font-semibold text-slate-500'>{item.teacher.user.first_name} {item.teacher.user.last_name}</span></div>
+                                    <Link href={`/course/${item.id}`} className='p-2 bg-slate-500 text-white rounded-md hover:shadow-lg mt-2 block m-auto text-center md:w-1/2 w-3/4'>Kursni ko'rish</Link>
                                 </div>
                             </div>
                         ))
