@@ -1,6 +1,5 @@
 'use client'
 import Link from "next/link"
-import LoginIcon from '@mui/icons-material/Login';
 import { useEffect, useState } from "react";
 
 const Sign = () => {
@@ -15,7 +14,7 @@ const Sign = () => {
   }, []);
 
   return (
-    <div className=''>
+    <div className='md:pt-0 pt-6'>
       {accessToken ? (
         <div>
           {is_staff === 'true' ? (
@@ -26,7 +25,7 @@ const Sign = () => {
         </div>
       ) : (
         <div>
-          <Link href='/authentication/login' className='font-semibold text-white rounded-md md:text-lg'><LoginIcon/> Kirish</Link>
+          <Link href='/authentication/login' className='font-semibold text-sky-600 rounded-2xl md:text-md border-2 border-sky-600 pr-7 pl-7 pt-2 pb-2 bg-sky-50 hover:bg-sky-600 hover:text-white transition-all ease-in-out duration-300'>Kirish</Link>
         </div>
       )}
     </div>

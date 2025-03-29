@@ -1,5 +1,6 @@
 'use client'
 import Main from "./home/Main";
+import 'animate.css';
 
 
 

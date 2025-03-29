@@ -17,10 +17,6 @@ const Main = () => {
       <Banner />
       <Info />
       <Teachers />
-      <Statistics />
-      <Specialities />
-      <Certificate />
-      <Programs />
       <Explanation />
       <Footer />
     </div>

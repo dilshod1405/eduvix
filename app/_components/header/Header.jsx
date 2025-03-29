@@ -2,15 +2,17 @@ import React from 'react'
 import '@/app/_styles/header.scss'
 import Navigation from './links/Navigation'
 import { Logo } from './logo/Logo'
+import Sign from './sign/Sign'
 
 const Header = () => {
 
   return (
-    <div className='header bg-slate-800 text-white md:pl-10 md:pr-10 pt-2 pb-3 rounded-b-3xl'>
-      <ul className='md:flex md:flex-row md:items-center flex flex-col md:justify-between text-center '>
-        <li className='inline-block text-sm'><Logo /></li>
-        <li className='inline-block text-sm m-auto md:m-0'><Navigation/></li>
-      </ul>
+    <div className='pt-1 md:pt-5 md:pb-5 md:pl-20 md:pr-20 md:mx-auto shadow-lg sticky top-0 z-50 bg-white md:h-20 h-1/6'>
+      <section className='flex md:flex-row flex-col space-x-4 pt-1 justify-between md:w-4/5 mx-auto items-center'>
+        <Logo />
+        <Navigation />
+        <Sign />
+      </section>
     </div>
   )
 }

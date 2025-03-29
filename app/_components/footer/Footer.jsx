@@ -8,6 +8,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import TaskIcon from '@mui/icons-material/Task';
 import QuizIcon from '@mui/icons-material/Quiz';
 import DuoIcon from '@mui/icons-material/Duo';
+import { Logo } from '../header/logo/Logo';
 
 const data_1 = [
   {
@@ -32,48 +33,16 @@ const data_1 = [
   }
 ]
 
-const data_2 = [
-  {
-    name: "Huquqiy hujjatlar",
-    url: "/",
-    icon: <TaskIcon />
-  },
-  {
-    name: "Instagram",
-    url: "/courses",
-    icon: <InstagramIcon />
-  },
-  {
-    name: "Telegram",
-    url: "/exams",
-    icon: <TelegramIcon />
-  },
-  {
-    name: "LinkedIn",
-    url: "/events",
-    icon: <LinkedInIcon />
-  }
-]
-
 const Footer = () => {
   return (
-    <div className='bg-slate-800 text-white md:rounded-t-full md:pt-5 pt-5 md:pb-5 md:mt-10 mt-5 bottom-0'>
-      <div className='md:flex md:flex-row md:w-3/4 mx-auto block m-auto w-3/4'>
-        <ul className='block md:w-1/7 m-auto'>
-          {data_1.map((item, index) => (
-            <li key={index} className='md:text-lg p-2 '>
-              <Link href={item.url} className='font-semibold md:text-lg '>{item.icon} {item.name}</Link>
-            </li>
-          ))}
-        </ul>
-        <ul className='block md:w-1/7 m-auto'>
-          {data_2.map((item, index) => (
-            <li key={index} className='md:text-lg p-2'>
-              <Link href={item.url} className='font-semibold md:text-lg'>{item.icon} {item.name}</Link>
-            </li>
-          ))}
-        </ul>
-      </div>
+    <div className='bg-white md:pt-5 pt-5 md:pb-5 md:mt-10 mt-5 border-t-2 border-slate-200 pb-5'>
+      <section className='flex md:flex-row flex-col md:space-x-4 space-y-3 justify-between md:w-4/5 mx-auto items-center'>
+        <Logo />
+        <Link href='/' className='md:text-2xl text-lg font-bold text-slate-600'><InstagramIcon /> Instagram</Link>
+        <Link href='/' className='md:text-2xl text-lg font-bold text-slate-600'><TelegramIcon /> Telegram</Link>
+        <Link href='/' className='md:text-2xl text-lg font-bold text-slate-600'><LinkedInIcon /> LinkedIn</Link>
+        <Link href='/' className='md:text-2xl text-lg font-bold text-slate-600 md:mb-2 mb-2'>© 2025,  <span className='text-indigo-500'>EduVix</span> </Link>
+      </section>
     </div>
   )
 }
