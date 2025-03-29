@@ -12,18 +12,18 @@ const urls = [
     url: "/exams"
   },
   {
-    name: "Dayjestlar",
-    url: "/events"
-  },
-  {
     name: "Normativlar",
     url: "/normative_documents"
-  }
+  },
+  {
+    name: "Dasturlar",
+    url: "/programs"
+  },
 ]
 
 const Navigation= () => {
   return (
-    <ul className="flex md:space-x-14 space-x-5 md:pt-3"> 
+    <ul className="flex md:space-x-14 space-x-5 md:pt-3 pt-2"> 
       {urls.map((url, index) => (
         <li key={index}>
           <Link className='linkn font-light md:text-lg' href={url.url}>{url.name}</Link>
