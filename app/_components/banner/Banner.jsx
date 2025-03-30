@@ -25,7 +25,7 @@ const banners = [
   },
   {
     title: "Iqtisodiyot",
-    img: "https://blog.n8n.io/content/images/size/w1200/2025/02/11-ai-tools-coding--1-.png",
+    img: "https://br9.weebly.com/uploads/1/0/3/9/103910164/business-and-economics_orig.jpg",
     description: "Buxgalteriya, Smeta, Marketing kurslari"
   },
 ];
