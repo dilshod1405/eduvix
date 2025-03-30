@@ -34,7 +34,7 @@ const data = [
 const Explanation = () => {
   return (
     <div className='md:pt-10 md:w-3/4 w-11/12 md:mx-auto pt-10 block m-auto h-50 pb-10'>
-        <div className='md:text-4xl text-xl md:pt-7 font-semibold text-center'>Savollarga javoblar</div>
+        <div className='md:text-4xl text-xl md:pt-7 font-semibold text-center'>Ko'p beriladigan savollar</div>
         <div className='md:pt-10 pt-5 h-50 m-auto md:w-3/4'>
             <AccordionGroup sx={{ maxWidth: 1000 }}>
                 {data.map((item, index) => (

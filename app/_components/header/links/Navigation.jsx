@@ -23,7 +23,7 @@ const urls = [
 
 const Navigation= () => {
   return (
-    <ul className="flex md:space-x-14 space-x-5 md:pt-3 pt-2"> 
+    <ul className="flex md:space-x-14 space-x-5 md:pt-0 pt-2"> 
       {urls.map((url, index) => (
         <li key={index}>
           <Link className='linkn font-light md:text-lg' href={url.url}>{url.name}</Link>

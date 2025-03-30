@@ -48,7 +48,7 @@ const teachers = [
 const Teachers = () => {
   return (
     <div className='md:pt-20 md:w-3/4 md:mx-auto pt-5 md:block block m-auto h-50'>
-        <div className='md:text-4xl text-xl pt-7 md:pt-0 font-semibold text-center'>Tajribali ustozlar jamoasi</div>
+        <div className='md:text-4xl text-xl pt-7 md:pt-0 font-semibold text-left'>Tajribali ustozlar jamoasi</div>
         <div className='pt-10 h-50'>
             <Swiper
                 modules={[EffectCreative, EffectFade, Autoplay]}

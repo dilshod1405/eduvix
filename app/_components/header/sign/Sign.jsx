@@ -14,7 +14,7 @@ const Sign = () => {
   }, []);
 
   return (
-    <div className='md:pt-0 pt-6'>
+    <div className='md:pt-0 pt-3'>
       {accessToken ? (
         <div>
           {is_staff === 'true' ? (

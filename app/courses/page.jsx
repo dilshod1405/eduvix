@@ -4,13 +4,13 @@ import Footer from '../_components/footer/Footer'
 import Filter from './Filter'
 
 export const metadata = {
-  title: 'ProHub | Kurslar',
+  title: 'EduVix | Kurslar',
 } 
 
 const page = () => {
   
   return (
-    <div className=''>
+    <div className='min-h-screen'>
       <Header />
       <div className='md:mx-auto pt-5 block m-auto'>
         <Filter />

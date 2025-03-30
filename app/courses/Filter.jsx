@@ -53,7 +53,7 @@ export default function FilterComponent() {
 
   return (
     <div className="md:flex md:flex-row min-h-screen m-auto">
-        <div className="p-5 md:p-10 bg-slate-200 rounded-md md:w-1/5 w-3/4 md:mt-10 mt-5 m-auto md:sticky md:top-20">
+        <div className="p-5 md:p-10 bg-slate-200 rounded-md md:w-1/5 w-3/4 md:mt-10 m-auto md:sticky md:top-[170px]">
             <h2 className="md:text-xl text-lg font-bold mb-2 md:mb-4 text-slate-700 text-center">Kategoriya bo'yicha qidirish</h2>
             <div className="mb-4 md:mb-6">
                 {categories.map(category => (
