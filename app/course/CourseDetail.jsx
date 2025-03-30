@@ -33,14 +33,14 @@ const CourseDisplay = (props) => {
       }
     ]
   return (
-    <div className='md:pt-10 md:w-3/4 md:mx-auto pt-5 md:pl-20 md:pr-20 block m-auto h-50 bg-slate-100 md:mt-10 md:rounded-2xl md:pb-10'>
-        <h1 className='md:text-4xl text-xl md:pt-3 font-bold text-center text-slate-600'>{course.name}</h1>
+    <div className='md:pt-10 md:w-3/4 md:mx-auto pt-5 md:pl-20 md:pr-20 block m-auto h-50  md:mt-10 md:rounded-2xl md:pb-10'>
+        <h1 className='md:text-4xl text-xl md:pt-3 font-bold text-center text-sky-600'>{course.name}</h1>
         <section className='md:pt-10 md:text-lg text-sm text-justify flex md:flex-row flex-col md:justify-between'>
             {data.map((item, index) => (
-                <div key={index} className='md:w-1/4 w-3/4 p-5 bg-slate-200 md:rounded-2xl md:mr-5 text-center md:mb-0 mb-5 md:mt-0 mt-5 m-auto'>
-                  <h2 className=' md:pt-3 font-bold text-center text-slate-600'>{item.icon}</h2>
-                  <span className='font-semibold text-slate-500 md:text-xl text-sm'>{item.question}</span>
-                  <p className='md:pt-5 pt-2 md:text-lg text-sm text-slate-700'>{item.answer}</p>
+                <div key={index} className='md:w-1/4 w-3/4 p-5 bg-sky-50 md:rounded-2xl md:mr-5 text-center md:mb-0 mb-5 md:mt-0 mt-5 m-auto'>
+                  <h2 className=' md:pt-3 pt-2 md:text-3xl text-xl font-bold text-center text-sky-300'>{item.icon}</h2>
+                  <span className='font-semibold md:text-xl text-sm'>{item.question}</span>
+                  <p className='md:pt-5 pt-2 md:text-lg text-sm '>{item.answer}</p>
                 </div>
             ))}
         </section>

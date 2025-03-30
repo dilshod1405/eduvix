@@ -6,22 +6,27 @@ const banners = [
   {
     title: "Qurilish va injeneriya",
     img: "https://t4.ftcdn.net/jpg/02/27/63/29/360_F_227632912_rYumiY9wlbxbmP3kkaDNZjjXxhRULco3.jpg",
-    description: "Binolarning konstruktiv, elektr, ventilyatsiya va kanalizatsiya tizimlarini loyihalash"
+    description: "Konstruktiv, Elektr, Ventilyatsiya va Kanalizatsiya tizimlarini loyihalash"
   },
   {
     title: "Arxitektura",
     img: "https://png.pngtree.com/thumb_back/fh260/background/20230712/pngtree-architect-examining-a-3d-sketch-drawing-on-blueprint-image_3840181.jpg",
-    description: "Binolarni hajmi, joylashuvi hamda landshaft jihatidan loyihalash"
+    description: "Binolarni hajmiy, joylashuv hamda landshaft jihatidan loyihalash"
   },
   {
     title: "Dizayn",
     img: "https://wallpaperset.com/w/full/e/0/c/313010.jpg",
-    description: "Interyer, eksteryer modellashtirish va grafik dizayn"
+    description: "Interyer, Eksteryer modellashtirish va Grafik dizayn"
   },
   {
     title: "Dasturlash",
     img: "https://blog.n8n.io/content/images/size/w1200/2025/02/11-ai-tools-coding--1-.png",
     description: "Frontend, Backend, Mobil va FullStack dasturlash"
+  },
+  {
+    title: "Iqtisodiyot",
+    img: "https://blog.n8n.io/content/images/size/w1200/2025/02/11-ai-tools-coding--1-.png",
+    description: "Buxgalteriya, Smeta, Marketing kurslari"
   },
 ];
 
