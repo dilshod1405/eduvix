@@ -1,40 +1,87 @@
 'use client'
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Box from '@mui/material/Box';
 import Tab from '@mui/material/Tab';
 import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
-import Link from 'next/link';
 import PlayCircleIcon from '@mui/icons-material/PlayCircle';
+import Link from 'next/link';
+import axios from 'axios';
 
-export default function ModulesTab(props) {
-  const [value, setValue] = React.useState('1');
-  const modules = props.modules
-  const lessons = props.lessons
-  console.log(lessons);
-  
-  
-  const handleChange = (event, newValue) => {
+export default function ModulesTab({ modules, lessons, userId }) {
+  const [value, setValue] = useState(modules[0]?.id.toString() || '1');
+  const [paidModules, setPaidModules] = useState({});
+
+  const handleChange = async (event, newValue) => {
     setValue(newValue);
+
+    if (paidModules[newValue] === undefined) {
+      try {
+        const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL_PAYMENT}/check_status/${userId}/${newValue}/`);
+        setPaidModules((prev) => ({ ...prev, [newValue]: res.data.paid }));
+        console.log('Payment status:', res.data.paid);
+        
+      } catch (err) {
+        console.error("Payment status fetch error", err);
+        setPaidModules((prev) => ({ ...prev, [newValue]: false }));
+      }
+    }
   };
+
+  useEffect(() => {
+    handleChange(null, value);
+  }, []);
 
   return (
     <Box sx={{ width: '100%', typography: 'body1' }}>
       <TabContext value={value}>
         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
           <TabList onChange={handleChange} indicatorColor='primary'>
-            {modules.map((module, index) => (
-              <Tab key={index} label={module.name} value={`${module.id}`} style={{color: '#1e293b', fontWeight: 'bold', fontSize: '16px', textTransform: 'uppercase', letterSpacing: '1px'}} ></Tab>
+            {modules.map((module) => (
+              <Tab
+                key={module.id}
+                label={module.name}
+                value={module.id.toString()}
+                style={{
+                  color: '#1e293b',
+                  fontWeight: 'bold',
+                  fontSize: '16px',
+                  textTransform: 'uppercase',
+                  letterSpacing: '1px',
+                }}
+              />
             ))}
           </TabList>
         </Box>
-        {lessons.map((lesson, index) => (
-          <div className='border-b-2 border-slate-200 pt-5 pb-5'>
-            <TabPanel key={index} value={`${lesson.module.id}`} style={{padding: '10px', margin: '0px'}}>
-              <Link key={index} href={`/video/${lesson.module.speciality.id}/${lesson.module.id}/${lesson.id}`} className='font-semibold md:text-lg text-slate-700 flex flex-row'><PlayCircleIcon className='mr-2'/> {index + 1} - {lesson.name}</Link>
-            </TabPanel>
-          </div>
+
+        {modules.map((module) => (
+          <TabPanel key={module.id} value={module.id.toString()} style={{ padding: '10px' }}>
+            {lessons
+              .filter((lesson) => lesson.module.id === module.id)
+              .map((lesson) => {
+                const isPaid = paidModules[module.id];
+
+                return (
+                  <div key={lesson.id} className='border-b-2 border-slate-200 pt-5 pb-5'>
+                    {isPaid ? (
+                      <Link
+                        href={`/video/${lesson.module.speciality.id}/${lesson.module.id}/${lesson.id}`}
+                        className='font-semibold md:text-lg text-slate-700 flex flex-row'
+                      >
+                        <PlayCircleIcon className='mr-2' />
+                        {lesson.name}
+                      </Link>
+                    ) : (
+                      <div className='font-semibold md:text-lg text-slate-400 flex flex-row cursor-not-allowed opacity-50'>
+                        <PlayCircleIcon className='mr-2' />
+                        (To'lanmagan) - {lesson.name}
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+          </TabPanel>
         ))}
       </TabContext>
     </Box>

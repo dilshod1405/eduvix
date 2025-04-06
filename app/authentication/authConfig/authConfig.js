@@ -1,5 +1,4 @@
 import axios from 'axios';
-import jwt_decode from 'jwt-decode';
 const Auth_URL = process.env.NEXT_PUBLIC_API_URL_AUTH; // Replace with your backend URL
 
 const register = async (username, email, password, first_name, last_name, photo) => {
@@ -28,6 +27,7 @@ const login = async (username, password) => {
     if (response.data.access) {
       localStorage.setItem('access', response.data.access);
       localStorage.setItem('refresh', response.data.refresh);
+      localStorage.setItem('role', response.data.role);
       return response.data;
     }
   } catch (error) {
@@ -74,10 +74,4 @@ const refreshToken = async () => {
     return null;
   };
 
-export default {
-  register,
-  login,
-  logout,
-  getCurrentUser,
-  refreshToken,
-};
+export default { register, login, logout, getCurrentUser, refreshToken };

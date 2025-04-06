@@ -65,15 +65,15 @@ export default async function CourseDetail({ params }) {
 
   // ✅ Now filter correctly
   const filteredModules = moduleArray.filter(
-    (module) => module.speciality.name === course.name
+    (module) => module.speciality.id === course.id
   );
 
   const filteredLessons = lessons.filter(
-    (lesson) => lesson.module.speciality.name === course.name
+    (lesson) => lesson.module.speciality.id === course.id
   );
 
   return (
-    <div className="h-screen">
+    <div className="">
       <Header />
       <CourseDisplay course={course} filteredModules={filteredModules} filteredLessons={filteredLessons}/>
       <Footer />

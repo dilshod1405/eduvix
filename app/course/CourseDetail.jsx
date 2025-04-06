@@ -33,7 +33,7 @@ const CourseDisplay = (props) => {
       }
     ]
   return (
-    <div className='md:pt-10 md:w-3/4 md:mx-auto pt-5 md:pl-20 md:pr-20 block m-auto h-50  md:mt-10 md:rounded-2xl md:pb-10'>
+    <div className='md:pt-10 md:w-3/4 md:mx-auto pt-5 md:pl-20 md:pr-20 block m-auto h-50  md:mt-10 md:rounded-2xl md:pb-10 md:h-screen items-center justify-center'>
         <h1 className='md:text-4xl text-xl md:pt-3 font-bold text-center text-sky-600'>{course.name}</h1>
         <section className='md:pt-10 md:text-lg text-sm text-justify flex md:flex-row flex-col md:justify-between'>
             {data.map((item, index) => (
@@ -45,7 +45,7 @@ const CourseDisplay = (props) => {
             ))}
         </section>
         <section className='md:pt-10 md:text-lg text-sm text-justify w-3/4 m-auto'>
-            <ModulesTab modules={module} course={course} lessons={lessons}/>
+        <ModulesTab modules={module} course={course} lessons={lessons} userId={1} />
         </section>
     </div>
   )
