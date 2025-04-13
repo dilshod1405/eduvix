@@ -6,11 +6,14 @@ import { Button } from '@mui/material';
 import Link from 'next/link';
 import { login } from '../authConfig/AuthService';
 import CircularProgress from '@mui/material/CircularProgress';
+import { useRouter } from 'next/navigation';
+import { signInAction } from './action';
 
 const page = () => {
   const [username, setUsername] = React.useState('')
   const [password, setPassword] = React.useState('')
   const [error, setError] = React.useState(false)
+  const navigate = useRouter();
   const [loading, setLoading] = useState(false);
 
   const handleLogin = async (e) => {
@@ -24,14 +27,8 @@ const page = () => {
       localStorage.setItem('access', access);
       localStorage.setItem('refresh', refresh);
       localStorage.setItem('role', role);
-      
-      // Redirect based on role
-      const roleRoutes = {
-        student: '/authentication/student/dashboard',
-        teacher: '',
-      };
 
-      navigate(roleRoutes[role] || '/');
+      navigate.push('/courses');
     } catch (err) {
       setError(err);
     } finally {
@@ -61,7 +58,7 @@ const page = () => {
               </div>
               <p className='mt-5'>yoki</p>
               <div className='mt-5'>
-                <Button variant="outlined" ><img src="https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png" className='w-10' alt="" /> Google orqali kirish</Button>
+                <Button onClick={signInAction} variant="outlined"><img src="https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png" className='w-10' alt="" /> Google orqali kirish</Button>
               </div>
               <div className='mt-5'>
                 <p>Akkauntingiz yo'qmi ? <Link href={'/authentication/forgot'} className='text-sky-600 font-semibold'>Ro'yxatdan o'tish</Link></p>

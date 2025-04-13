@@ -5,11 +5,12 @@ import { useEffect, useState } from "react";
 const Sign = () => {
   const [accessToken, setAccessToken] = useState(null);
   const [is_staff, setIs_staff] = useState(null);
+  const [role, setRole] = useState(null);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
       setAccessToken(localStorage.getItem("access"));
-      setIs_staff(localStorage.getItem("is_staff"));
+      setRole(localStorage.getItem("role"));
     }
   }, []);
 
@@ -17,11 +18,7 @@ const Sign = () => {
     <div className='md:pt-0 pt-3'>
       {accessToken ? (
         <div>
-          {is_staff === 'true' ? (
-            <Link href='/authentication/admin/dashboard' className=''>Admin</Link>
-          ) : (
-            <Link href='/authentication/client/dashboard' className=''>Profile</Link>
-          )}
+          <Link href='/authentication/client/dashboard' className='uppercase font-semibold text-sky-600 '>{role}</Link>
         </div>
       ) : (
         <div>

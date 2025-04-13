@@ -22,7 +22,6 @@ export default function FilterComponent() {
       .then((res) => {
         setSpecialities(res.data);
         setFilteredSpecialities(res.data);
-        console.log(res.data);
         
         setLoading(false);
       })

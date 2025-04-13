@@ -9,29 +9,32 @@ import PlayCircleIcon from '@mui/icons-material/PlayCircle';
 import Link from 'next/link';
 import axios from 'axios';
 
-export default function ModulesTab({ modules, lessons, userId }) {
+export default function ModulesTab({ modules, lessons, username }) {
   const [value, setValue] = useState(modules[0]?.id.toString() || '1');
   const [paidModules, setPaidModules] = useState({});
 
-  const handleChange = async (event, newValue) => {
-    setValue(newValue);
-
-    if (paidModules[newValue] === undefined) {
-      try {
-        const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL_PAYMENT}/check_status/${userId}/${newValue}/`);
-        setPaidModules((prev) => ({ ...prev, [newValue]: res.data.paid }));
-        console.log('Payment status:', res.data.paid);
-        
-      } catch (err) {
-        console.error("Payment status fetch error", err);
-        setPaidModules((prev) => ({ ...prev, [newValue]: false }));
-      }
-    }
-  };
-
   useEffect(() => {
-    handleChange(null, value);
-  }, []);
+    const preloadStatuses = async () => {
+      const updated = {};
+      for (const module of modules) {
+        try {
+          const res = await axios.get(
+            `${process.env.NEXT_PUBLIC_API_URL_PAYMENT}/payment/check_status/${username}/${module.id}/`
+          );
+          updated[module.id] = res.data.status === 'paid';
+        } catch {
+          updated[module.id] = false;
+        }
+      }
+      setPaidModules(updated);
+    };
+
+    preloadStatuses();
+  }, [modules, username]);
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
 
   return (
     <Box sx={{ width: '100%', typography: 'body1' }}>

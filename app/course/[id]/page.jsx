@@ -45,7 +45,9 @@ async function getLessons() {
 
 export default async function CourseDetail({ params }) {
   const { id } = params;
-  if (!id) {
+
+  // ✅ Check if ID is valid
+  if (!id || isNaN(id)) {
     return notFound();
   }
 
@@ -53,8 +55,6 @@ export default async function CourseDetail({ params }) {
   const course = await getCourse(id);
   const modules = await getModules(id);
   const lessons = await getLessons(id);
-
-  console.log(lessons);
 
   if (!course) {
     return notFound();
