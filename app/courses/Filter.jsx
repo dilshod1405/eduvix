@@ -13,12 +13,12 @@ export default function FilterComponent() {
 
   useEffect(() => {
     // Fetch categories
-    axios.get(`${process.env.NEXT_PUBLIC_API_URL_EDU}/edu/categories/`)
+    axios.get(`${process.env.NEXT_PUBLIC_API_URL_EDU}/content/categories/`)
       .then((res) => setCategories(res.data))
       .catch((err) => console.error("Error fetching categories:", err));
 
     // Fetch all specialities
-    axios.get(`${process.env.NEXT_PUBLIC_API_URL_EDU}/edu/specialities/`)
+    axios.get(`${process.env.NEXT_PUBLIC_API_URL_EDU}/content/specialities/`)
       .then((res) => {
         setSpecialities(res.data);
         setFilteredSpecialities(res.data);
