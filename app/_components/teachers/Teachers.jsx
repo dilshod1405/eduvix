@@ -9,10 +9,10 @@ import 'swiper/css/scrollbar';
 
 const teachers = [
     {
-        photo: "https://dilshod1405.pythonanywhere.com//media/media/IMG_4844.jpeg?w=248&fit=crop&auto=format",
-        name: "Dilshod Normurodov",
-        position: "Full Stack Developer",
-        experience: "3"
+        photo: "/sarvar.jpg",
+        name: "Sarvar Sadullayev",
+        position: "Arxitektor, Injener",
+        experience: "8"
     },
     {
         photo: "https://dilshod1405.pythonanywhere.com//media/media/IMG_4844.jpeg?w=248&fit=crop&auto=format",
@@ -21,10 +21,10 @@ const teachers = [
         experience: "3"
     },
     {
-        photo: "https://dilshod1405.pythonanywhere.com//media/media/IMG_4844.jpeg?w=248&fit=crop&auto=format",
-        name: "Dilshod Normurodov",
-        position: "Full Stack Developer",
-        experience: "3"
+        photo: "/sarvar.jpg",
+        name: "Sarvar Sadullayev",
+        position: "Arxitektor, Injener",
+        experience: "8"
     },
     {
         photo: "https://dilshod1405.pythonanywhere.com//media/media/IMG_4844.jpeg?w=248&fit=crop&auto=format",
@@ -33,10 +33,10 @@ const teachers = [
         experience: "3"
     },
     {
-        photo: "https://dilshod1405.pythonanywhere.com//media/media/IMG_4844.jpeg?w=248&fit=crop&auto=format",
-        name: "Dilshod Normurodov",
-        position: "Full Stack Developer",
-        experience: "3"
+        photo: "/sarvar.jpg",
+        name: "Sarvar Sadullayev",
+        position: "Arxitektor, Injener",
+        experience: "8"
     },
     {
         photo: "https://dilshod1405.pythonanywhere.com//media/media/IMG_4844.jpeg?w=248&fit=crop&auto=format",
