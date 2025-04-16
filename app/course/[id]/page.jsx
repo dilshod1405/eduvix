@@ -8,7 +8,7 @@ import CourseDisplay from "../CourseDetail";
 // ✅ Fetch course data from API using Axios
 async function getCourse(id) {
   try {
-    const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL_EDU}/edu/specialities/${id}/`, {
+    const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL_EDU}/content/specialities/${id}/`, {
       headers: { "Cache-Control": "no-store" },
     });
     return response.data;
@@ -21,7 +21,7 @@ async function getCourse(id) {
 // ✅ Fetch modules data
 async function getModules() {
   try {
-    const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL_EDU}/edu/modules/`, {
+    const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL_EDU}/content/modules/`, {
       headers: { "Cache-Control": "no-store" },
     });
     return response.data; // Ensure this is an array
@@ -33,7 +33,7 @@ async function getModules() {
 
 async function getLessons() {
   try {
-    const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL_EDU}/edu/lessons/`, {
+    const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL_EDU}/content/lessons/`, {
       headers: { "Cache-Control": "no-store" },
     });
     return response.data; // Ensure this is an array
