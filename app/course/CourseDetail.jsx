@@ -9,7 +9,7 @@ const CourseDisplay = (props) => {
     const course = props.course
     const module = props.filteredModules
     const lessons = props.filteredLessons
-
+    
     
     
     const data = [
@@ -47,7 +47,7 @@ const CourseDisplay = (props) => {
             ))}
         </section>
         <section className='md:pt-10 md:text-lg text-sm text-justify w-3/4 m-auto'>
-        <ModulesTab modules={module} course={course} lessons={lessons} username={"dilshod1405"} />
+        <ModulesTab modules={module} lessons={lessons} user_id={1} />
         </section>
     </div>
   )

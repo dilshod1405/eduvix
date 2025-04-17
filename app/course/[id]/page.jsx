@@ -56,21 +56,34 @@ export default async function CourseDetail({ params }) {
   const modules = await getModules(id);
   const lessons = await getLessons(id);
 
+  console.log("Course response:", course);
+  console.log("Modules response:", modules);
+  console.log("Lessons response:", lessons);
+  
+  // ✅ Check if course data is valid
   if (!course) {
     return notFound();
   }
-
-  // ✅ Wrap single object in an array
-  const moduleArray = Array.isArray(modules) ? modules : [modules];
-
-  // ✅ Now filter correctly
-  const filteredModules = moduleArray.filter(
-    (module) => module.speciality.id === course.id
+  // ✅ Check if modules and lessons data are valid
+  if (!modules || !Array.isArray(modules) || modules.length === 0) {
+    return notFound();
+  }
+  if (!lessons || !Array.isArray(lessons) || lessons.length === 0) {
+    return notFound();
+  }
+  // ✅ Filter modules and lessons based on course ID
+  const filteredModules = modules.filter(
+    (module) => String(module.speciality) === String(id)
   );
-
+  
   const filteredLessons = lessons.filter(
-    (lesson) => lesson.module.speciality.id === course.id
+    (lesson) => String(lesson.module?.speciality) === String(id)
   );
+  
+  
+  console.log("Filtered modules:", filteredModules);
+  console.log("Filtered lessons:", filteredLessons);
+  
 
   return (
     <div className="">

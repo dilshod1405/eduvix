@@ -9,32 +9,44 @@ import PlayCircleIcon from '@mui/icons-material/PlayCircle';
 import Link from 'next/link';
 import axios from 'axios';
 
-export default function ModulesTab({ modules, lessons, username }) {
+export default function ModulesTab({ modules, lessons, user_id }) {
   const [value, setValue] = useState(modules[0]?.id.toString() || '1');
   const [paidModules, setPaidModules] = useState({});
-
+  
   useEffect(() => {
     const preloadStatuses = async () => {
-      const updated = {};
-      for (const module of modules) {
-        try {
-          const res = await axios.get(
-            `${process.env.NEXT_PUBLIC_API_URL_PAYMENT}/payment/check_status/${username}/${module.id}/`
-          );
-          updated[module.id] = res.data.status === 'paid';
-        } catch {
-          updated[module.id] = false;
-        }
+      try {
+        const statusArray = await Promise.all(
+          modules.map(async (module) => {
+            try {
+              const res = await axios.get(
+                `${process.env.NEXT_PUBLIC_API_URL_PAYMENT}/payment/check-payment-status/${module.id}/${user_id}/`
+              );
+              return [module.id, res.data.status === 'paid'];
+            } catch {
+              return [module.id, false];
+            }
+          })
+        );
+  
+        setPaidModules(Object.fromEntries(statusArray));
+      } catch (error) {
+        console.error('Error preloading payment statuses', error);
       }
-      setPaidModules(updated);
     };
-
+  
     preloadStatuses();
-  }, [modules, username]);
+  }, [modules, user_id]);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
+  }
+  const handleTabClick = (moduleId) => {
+    setValue(moduleId);
   };
+  const handleLessonClick = (lessonId) => {
+    setValue(lessonId);
+  }
 
   return (
     <Box sx={{ width: '100%', typography: 'body1' }}>
@@ -59,7 +71,7 @@ export default function ModulesTab({ modules, lessons, username }) {
         </Box>
 
         {modules.map((module) => (
-          <TabPanel key={module.id} value={module.id.toString()} style={{ padding: '10px' }}>
+          <TabPanel onClick={() => handleTabClick(module.id.toString())} key={module.id} value={module.id.toString()} style={{ padding: '10px' }}>
             {lessons
               .filter((lesson) => lesson.module.id === module.id)
               .map((lesson) => {
@@ -69,6 +81,9 @@ export default function ModulesTab({ modules, lessons, username }) {
                   <div key={lesson.id} className='border-b-2 border-slate-200 pt-5 pb-5'>
                     {isPaid ? (
                       <Link
+                        onClick={() => handleLessonClick(lesson.id)}
+                        aria-label={`Watch lesson ${lesson.name}`}
+                        title={`Watch lesson ${lesson.name}`}
                         href={`/video/${lesson.module.speciality.id}/${lesson.module.id}/${lesson.id}`}
                         className='font-semibold md:text-lg text-slate-700 flex flex-row'
                       >
