@@ -2,3 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+    background-image: url("https://i.pinimg.com/736x/89/da/43/89da43826199b69433b71cdadbd31fb4.jpg");
+
+}
