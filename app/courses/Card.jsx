@@ -30,7 +30,6 @@ function ShowSkeletons({length=4}) {
 }
 
 const Card = (props) => {
-    console.log(props);
     const loading = props.loading
 
     return (

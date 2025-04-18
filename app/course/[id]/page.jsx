@@ -56,10 +56,6 @@ export default async function CourseDetail({ params }) {
   const modules = await getModules(id);
   const lessons = await getLessons(id);
 
-  console.log("Course response:", course);
-  console.log("Modules response:", modules);
-  console.log("Lessons response:", lessons);
-  
   // ✅ Check if course data is valid
   if (!course) {
     return notFound();
@@ -79,10 +75,6 @@ export default async function CourseDetail({ params }) {
   const filteredLessons = lessons.filter(
     (lesson) => String(lesson.module?.speciality) === String(id)
   );
-  
-  
-  console.log("Filtered modules:", filteredModules);
-  console.log("Filtered lessons:", filteredLessons);
   
 
   return (
