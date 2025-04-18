@@ -36,12 +36,12 @@ const Card = (props) => {
     return (
         <div className='md:pt-10 pt-5 md:mx-auto'>
             {loading ? <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
-                <ShowSkeletons length={4}/>
+                <ShowSkeletons className='bg-white' length={4}/>
             </Grid> : (
                 <div className='md:grid md:grid-cols-3 md:gap-5'>
                     {props.filteredSpecialities.length > 0
                         ? props.filteredSpecialities.map((item, index) => (
-                            <div key={index} className='md:w-[450px]  w-3/4 m-auto mt-5 shadow-md rounded-md hover:shadow-xl transition ease-in duration-300  pb-5 animate__animated animate__fadeIn animate__delay-0.7s animate__ease-out animate__slow'>
+                            <div key={index} className='md:w-[450px] bg-white  w-3/4 m-auto mt-5 shadow-md rounded-md hover:shadow-xl transition ease-in duration-300  pb-5 animate__animated animate__fadeIn animate__delay-0.7s animate__ease-out animate__slow'>
                                 <div className=''>
                                     <img src={item.picture} alt=""
                                          className='block m-auto rounded-t-md md:h-80 w-full size-cover'/>

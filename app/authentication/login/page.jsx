@@ -39,10 +39,10 @@ const page = () => {
   return (
     <div className=''>
       
-      <div className='flex flex-col items-center justify-center md:h-screen h-full bg-slate-50'>
+      <div className='flex flex-col items-center justify-center md:h-screen h-full'>
           <section className='flex flex-col md:w-2/5 w-full m-auto md:rounded-2xl '>
             
-            <form onSubmit={handleLogin} className='flex flex-col items-center justify-center md:w-3/4 w-full m-auto md:h-50 h-full md:rounded-2xl pb-10 shadow-lg'>
+            <form onSubmit={handleLogin} className='bg-slate-50 flex flex-col items-center justify-center md:w-3/4 w-full m-auto md:h-50 h-full md:rounded-2xl pb-10 shadow-lg'>
             <h2 className='text-3xl font-bold text-sky-600 md:text-4xl pt-3 mb-5'>Login</h2>
               <div className=''>
                 <TextField className='w-full' id="outlined-basic" label="username" variant="outlined" onChange={(e) => setUsername(e.target.value)}/>
