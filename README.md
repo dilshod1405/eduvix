@@ -43,7 +43,6 @@ Whether you're mastering new skills or upgrading your career, Edvent is the righ
 | ![Auth.js](https://img.shields.io/badge/Auth.js-000?style=for-the-badge&logo=auth0&logoColor=white) | Authentication |
 | ![Axios](https://img.shields.io/badge/Axios-5A29E4?style=for-the-badge&logo=axios&logoColor=white) | HTTP Client |
 | ![TailwindCSS](https://img.shields.io/badge/TailwindCSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white) | Styling |
-| PostgreSQL | Backend database |
 
 ---
 
