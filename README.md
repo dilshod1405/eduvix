@@ -49,23 +49,23 @@ Whether you're mastering new skills or upgrading your career, Edvent is the righ
 
 ## 🖼️ Screenshots
 
-### 🏠 Landing Page
-> *(insert screenshot here)*
-
 ### 📚 Course Page
-> *(insert screenshot here)*
+> ![Course Page](https://media-hosting.imagekit.io/fafd0e3cc4334e06/edventcourses.png?Expires=1839665535&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=GK2i65sqfceoTvENwTZoBOH5t2c-uHEhSHVfenmSldlBEhiNqYPSt08xfKroMgxZzzNPiPke~eIco27scDHcU-wzM3y6JiyFfW0d8hWWVEVxzxlRYqcQGbgUS0wa-bUcwuh0hJ7-aRBGNTbbOY3H4zL35RfvsvxDKkNdPaQagkqbk7vu7ygrVxJPYIsPjTcSsXjUdxZUAVJiM~ZnL~ao7aKMzRIu5FKMTHjYdZFMzxUEQ2YaES23diUISgFbj872k4sEPhQAoXjcwrHmdYuGSmyzaPH1A9kNhjL7lPkQYl-oWa01PLQyoVjknNE0YVbKiQmQuCVmbbqubB6KCFV-Vg__)
+
+---
 
 ### 🔑 Google Login
-> *(insert screenshot here)*
-
-*(Replace these with actual platform images hosted in your repo or externally!)*
+> ![Google Login](https://media-hosting.imagekit.io/fb15f6382fc3479b/Google.png?Expires=1839665644&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=hG2WUg62Vp9VY6KBv84bBaLFJ5oqcgmP3HNvFx0E~0G5F5IdapUpp5HqXzfv-gVdtsgNjDph0hjxYxcAqDalLVBOf2i0r3SGyNSdR7ZnTNFqCMI4Ti6NQExOBuX9nvrbpSKTfvI5ivlSmMLvRZc8xk2aP3WQ8iILPqhhRwSkGsnrpSKq4abA~UKEF5LCFqndC9jBrs8ute-Mihc7ao5EQb26QSsrQcX0j1mc6dvm4f4w14C6X16rXUsKC7Ek2RIUAvSpnBsAxqb09tPRSK9ju-6TCBkA19J1~T94p6jORAE0uqwkburxf7mWjLsC0IeuIC3qb0R-l-5cNJIlbdJtWg__)
 
 
-## 📞 Contact Me
 
-📨 Email: dilshod.normurodov1392@gmail.com
-💬 Telegram: @dilshod1405
----
+## 📬 Contact Me
+
+<p align="center">
+  <b>💡 Developed by Dilshod Normurodov</b> <br/><br/>
+  📧 Email: dilshod.normurodov1392@gmail.com <br/>
+  💬 Telegram: <a href="https://t.me/dilshod1405">@dilshod1405</a>
+</p>
 
 ## 💡 Getting Started
 
