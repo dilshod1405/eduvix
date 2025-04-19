@@ -4,7 +4,7 @@ import Footer from '../_components/footer/Footer'
 import Filter from './Filter'
 
 export const metadata = {
-  title: 'EduVix | Kurslar',
+  title: 'Edvent | Kurslar',
 } 
 
 const page = () => {

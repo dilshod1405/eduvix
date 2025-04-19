@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: 'EduVix',
+  title: 'Edvent',
 }
 
 export default function RootLayout({ children }) {
